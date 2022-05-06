@@ -1,11 +1,4 @@
-import {
-  CaretLeft,
-  ChartBar,
-  Envelope,
-  Folder,
-  Graph,
-  House,
-} from "phosphor-react";
+import { CaretLeft, ChartBar, Envelope, Folder, House } from "phosphor-react";
 import { useState } from "react";
 
 function Sidebar() {
@@ -19,15 +12,14 @@ function Sidebar() {
     >
       <CaretLeft
         size={32}
-        weight="fill"
         className={`${
           !open && "rotate-180"
-        } absolute top-8 right-6 bg-white rounded-full cursor-pointer hover:bg-yellow-300 transition-colors`}
+        } absolute top-8 right-6 rounded-full cursor-pointer hover:bg-yellow-300 transition-colors`}
         onClick={() => {
           setOpen(!open);
         }}
       />
-      <p className={`${!open && "scale-0"} duration-300 origin-left text-md`}>
+      <p className={`${!open && "scale-0"} duration-300 ori text-md`}>
         Olá, <span className="font-bold">usuário</span>!
       </p>
 
@@ -36,8 +28,8 @@ function Sidebar() {
           src="https://source.unsplash.com/random"
           alt=""
           className={`${
-            !open && "w-8 h-8"
-          } duration-300 w-40 h-40 rounded-full`}
+            open ? "w-40 h-40" : "w-8 h-8"
+          } duration-300  rounded-full`}
         />
       </div>
 
@@ -108,7 +100,11 @@ function Sidebar() {
       </div>
 
       <div className="flex items-center justify-center mt-60">
-        <button className="px-6 py-3 rounded-md bg-neutral-900 text-white">
+        <button
+          className={`${
+            !open && "scale-0"
+          } px-6 py-3 rounded-md bg-neutral-900 text-yellow-500 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
+        >
           Sair
         </button>
       </div>

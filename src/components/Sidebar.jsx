@@ -1,4 +1,11 @@
-import { CaretLeft, ChartBar, Envelope, Folder, House } from "phosphor-react";
+import {
+  ArrowLineLeft,
+  CaretLeft,
+  ChartBar,
+  Envelope,
+  Folder,
+  House,
+} from "phosphor-react";
 import { useState } from "react";
 
 function Sidebar() {
@@ -99,12 +106,13 @@ function Sidebar() {
         </ul>
       </div>
 
-      <div className="flex items-center justify-center mt-60">
+      <div className="flex justify-start mt-80">
         <button
           className={`${
             !open && "scale-0"
-          } px-6 py-3 rounded-md bg-neutral-900 text-yellow-500 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
+          } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
         >
+          <ArrowLineLeft weight="bold" />
           Sair
         </button>
       </div>

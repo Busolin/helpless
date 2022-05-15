@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CaretLeft } from "phosphor-react";
 import Sidebar from "./components/Sidebar";
 import LoginScreen from "./pages/LoginScreen";
 
@@ -9,8 +8,8 @@ function App() {
   return (
     <div>
       {/* Container sidebar */}
-      {/* <Sidebar /> */}
-      <LoginScreen />
+      <Sidebar />
+      {/* <LoginScreen /> */}
     </div>
   );
 }

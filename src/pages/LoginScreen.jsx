@@ -5,12 +5,16 @@ function LoginScreen() {
   return (
     <div className="flex">
       <div className="w-1/2">
-        <img src={loginImage} className="h-screen bg-contain" />
+        <img src={loginImage} className="h-screen bg-cover" />
       </div>
       <div className="bg-white w-1/2">
-        {/* <img src={logoUTF} alt="" className="w-40 h-40" /> */}
+        {/* <img src={logoUTF} alt="" className="w-40" /> */}
 
-        <form action="" className="flex flex-col gap-8 p-40">
+        <form
+          action=""
+          className="flex flex-col gap-8 p-28
+        "
+        >
           <div className="flex flex-col">
             <label htmlFor="">Email</label>
             <input

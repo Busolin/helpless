@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./src/**/*.jsx"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        loginImage: "url('./assets/loginImage.jpg')",
+      },
+    },
   },
   plugins: [],
 };

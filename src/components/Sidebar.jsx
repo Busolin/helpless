@@ -7,6 +7,7 @@ import {
   House,
 } from "phosphor-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [open, setOpen] = useState("open");
@@ -44,7 +45,8 @@ function Sidebar() {
       <div className="flex flex-col mt-10  justify-center">
         <ul>
           <li>
-            <a
+            <Link
+              to="/dashboard"
               href=""
               className="transition-colors flex items-center mt-3 hover:bg-yellow-300 p-2 rounded-md"
             >
@@ -56,10 +58,11 @@ function Sidebar() {
               >
                 Home
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
+              to="/documents"
               href=""
               className="transition-colors flex items-center mt-1 hover:bg-yellow-300 p-2 rounded-md"
             >
@@ -71,7 +74,7 @@ function Sidebar() {
               >
                 Documentos
               </span>
-            </a>
+            </Link>
           </li>
           <li>
             <a
@@ -106,16 +109,18 @@ function Sidebar() {
         </ul>
       </div>
 
-      <div className="flex justify-start mt-80">
-        <button
-          className={`${
-            !open && "scale-0"
-          } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
-        >
-          <ArrowLineLeft weight="bold" />
-          Sair
-        </button>
-      </div>
+      <Link to="/">
+        <div className="flex justify-start mt-80">
+          <button
+            className={`${
+              !open && "scale-0"
+            } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
+          >
+            <ArrowLineLeft weight="bold" />
+            Sair
+          </button>
+        </div>
+      </Link>
     </div>
   );
 }

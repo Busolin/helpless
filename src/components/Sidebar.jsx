@@ -107,16 +107,18 @@ function Sidebar() {
           </li> */}
         </ul>
       </div>
-      <Link to="/" className="flex justify-start lg:mt-80 mt-40 ">
-        <button
-          className={`${
-            !open && "scale-0"
-          } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
-        >
-          <ArrowLineLeft weight="bold" />
-          Sair
-        </button>
-      </Link>
+      <div className="absolute bottom-10 left-6">
+        <Link to="/" className="">
+          <button
+            className={`${
+              !open && "scale-0"
+            } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
+          >
+            <ArrowLineLeft weight="bold" />
+            Sair
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

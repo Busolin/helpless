@@ -27,50 +27,50 @@ function RegisterScreen() {
           <div className="flex flex-col">
             <div className="grid grid-cols-2 gap-5">
               <div className="flex flex-col">
-                <label htmlFor="" className="text-zinc-700">
+                <label htmlFor="nameInput" className="text-zinc-700">
                   Nome
                 </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  name="nameInput"
+                  id="nameInput"
                   placeholder="Nome"
                   className="p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
                 />
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="" className="text-zinc-700">
+                <label htmlFor="surnameInput" className="text-zinc-700">
                   Sobrenome
                 </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  name="surnameInput"
+                  id="surnameInput"
                   placeholder="Sobrenome"
                   className="p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
                 />
               </div>
             </div>
 
-            <label htmlFor="" className="text-zinc-700 mt-4">
+            <label htmlFor="idInput" className="text-zinc-700 mt-4">
               Identidade (R.A.)
             </label>
             <input
               type="text"
-              name=""
-              id=""
+              name="idInput"
+              id="idInput"
               placeholder="Insira seu R.A. (Apenas números)"
               className="p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
             />
 
-            <label htmlFor="" className="text-zinc-700 mt-4">
+            <label htmlFor="passwordInput" className="text-zinc-700 mt-4">
               Senha
             </label>
             <input
               type="password"
-              name=""
-              id=""
+              name="passwordInput"
+              id="passwordInput"
               placeholder="Insira sua senha"
               className="p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
             />

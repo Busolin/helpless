@@ -21,25 +21,25 @@ function LoginScreen() {
         "
         >
           <div className="flex flex-col">
-            <label htmlFor="" className="text-zinc-700">
+            <label htmlFor="emailInput" className="text-zinc-700">
               Email
             </label>
             <input
               type="text"
-              name=""
-              id=""
+              name="emailInput"
+              id="emailInput"
               placeholder="Insira seu email"
               className="p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
             />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="" className="text-zinc-700">
+            <label htmlFor="passwordInput" className="text-zinc-700">
               Senha
             </label>
             <input
               type="password"
-              name=""
-              id=""
+              name="passwordInput"
+              id="passwordInput"
               placeholder="Insira sua senha"
               className="p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
             />

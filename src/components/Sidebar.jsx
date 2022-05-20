@@ -30,7 +30,6 @@ function Sidebar() {
       <p className={`${!open && "scale-0"} duration-300 ori text-md`}>
         Olá, <span className="font-bold">usuário</span>!
       </p>
-
       <div className="flex justify-center mt-10">
         <img
           src="https://source.unsplash.com/random"
@@ -40,7 +39,6 @@ function Sidebar() {
           } duration-300  rounded-full`}
         />
       </div>
-
       {/* Menu */}
       <div className="flex flex-col mt-10  justify-center">
         <ul>
@@ -56,7 +54,7 @@ function Sidebar() {
                   !open && "hidden"
                 } origin-left duration-200 font-bold text-neutral-800`}
               >
-                Home
+                Dashboard
               </span>
             </Link>
           </li>
@@ -77,7 +75,8 @@ function Sidebar() {
             </Link>
           </li>
           <li>
-            <a
+            <Link
+              to="/progress"
               href=""
               className="transition-colors flex items-center mt-1 hover:bg-yellow-300 p-2 rounded-md"
             >
@@ -87,11 +86,11 @@ function Sidebar() {
                   !open && "hidden"
                 } origin-left duration-200 font-bold text-neutral-800`}
               >
-                Gráfico
+                Progresso
               </span>
-            </a>
+            </Link>
           </li>
-          <li>
+          {/* <li>
             <a
               href=""
               className="transition-colors flex items-center mt-1 hover:bg-yellow-300 p-2 rounded-md"
@@ -105,21 +104,18 @@ function Sidebar() {
                 Certificado
               </span>
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
-
-      <Link to="/">
-        <div className="flex justify-start mt-80">
-          <button
-            className={`${
-              !open && "scale-0"
-            } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
-          >
-            <ArrowLineLeft weight="bold" />
-            Sair
-          </button>
-        </div>
+      <Link to="/" className="flex justify-start lg:mt-80 mt-40 ">
+        <button
+          className={`${
+            !open && "scale-0"
+          } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}
+        >
+          <ArrowLineLeft weight="bold" />
+          Sair
+        </button>
       </Link>
     </div>
   );

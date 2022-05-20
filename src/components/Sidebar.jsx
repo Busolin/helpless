@@ -8,6 +8,7 @@ import {
 } from "phosphor-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import profileImage from "../assets/cachorro_frentista.jpg";
 
 function Sidebar() {
   const [open, setOpen] = useState("open");
@@ -32,7 +33,7 @@ function Sidebar() {
       </p>
       <div className="flex justify-center mt-10">
         <img
-          src="https://source.unsplash.com/random"
+          src={profileImage}
           alt=""
           className={`${
             open ? "w-40 h-40" : "w-8 h-8"

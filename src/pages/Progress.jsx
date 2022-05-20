@@ -7,13 +7,13 @@ function Progress() {
       <Sidebar />
 
       <div className="flex flex-col w-1/2">
-        <h1 className="text-3xl p-12 pb-5">Progresso</h1>
+        <h1 className="text-3xl p-12 pt-4 pb-5">Progresso</h1>
 
         <div>
           <select
             name="selectGroup"
             id="selectGroup"
-            className="p-2 ml-12 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
+            className="cursor-pointer p-2 ml-12 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
           >
             <option value="grupo 1">Grupo 1</option>
             <option value="grupo 2">Grupo 2</option>
@@ -26,7 +26,7 @@ function Progress() {
           <select
             name=""
             id=""
-            className="max-w-md p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
+            className="cursor-pointer max-w-md p-2 border-2 border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500 focus:ring-1 focus:outline-none"
           >
             <option value="opt1">Atividades esportivas.</option>
             <option value="2">Curso de língua estrangeira.</option>
@@ -42,6 +42,25 @@ function Progress() {
               Participação como expositor em exposição artística ou cultural.
             </option>
           </select>
+
+          <p className="mt-5">Você tem 5 pontos dessa atividade. </p>
+
+          <p className="mt-5 ">Das quais:</p>
+          <ul className="ml-5 mt-1">
+            <li className="list-disc"> Futebol dos crias - 2 pontos</li>
+            <li className="list-disc"> Vôlei DACOMP - 2 pontos</li>
+            <li className="list-disc"> e-Sports - 1 pontos</li>
+          </ul>
+
+          <p className="mt-5">Deseja editar uma atividade?</p>
+          <div className="mt-3 flex gap-5">
+            <button className="hover:bg-yellow-300 transition-colors bg-yellow-500 px-4 py-2 font-bold focus:border-yellow-500 focus:ring-yellow-700 focus:ring-1 focus:outline-none">
+              Sim
+            </button>
+            <button className="hover:bg-yellow-300 transition-colors bg-yellow-500 px-4 py-2 font-bold focus:border-yellow-500 focus:ring-yellow-700 focus:ring-1 focus:outline-none">
+              Não
+            </button>
+          </div>
         </div>
       </div>
     </div>

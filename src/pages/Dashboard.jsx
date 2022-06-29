@@ -16,7 +16,7 @@ function Dashboard() {
               <p>20 Pontos</p>
             </div>
             <div className="relative h-6 rounded w-full bg-zinc-700">
-              <div className="text-center absolute top-0 h-6 w-2/4 rounded bg-yellow-400">
+              <div className="text-center absolute top-0 h-6 w-1/2 rounded bg-yellow-400">
                 <span>50%</span>
               </div>
             </div>

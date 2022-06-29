@@ -9,9 +9,12 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import profileImage from "../assets/cachorro_frentista.jpg";
+import Cookies from "universal-cookie";
 
 function Sidebar() {
   const [open, setOpen] = useState("open");
+  const cookie = new Cookies();
+  const session = cookie.get("session");
 
   return (
     <div
@@ -29,7 +32,7 @@ function Sidebar() {
         }}
       />
       <p className={`${!open && "scale-0"} duration-300 ori text-md`}>
-        Olá, <span className="font-bold">usuário</span>!
+        Olá, <span className="font-bold">{session.user.name}</span>!
       </p>
       <div className="flex justify-center mt-10">
         <img

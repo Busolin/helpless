@@ -4,6 +4,7 @@ import {
   ChartBar,
   Envelope,
   Folder,
+  FolderOpen,
   House,
 } from "phosphor-react";
 import { useState } from "react";
@@ -68,13 +69,13 @@ function Sidebar() {
               href=""
               className="transition-colors flex items-center mt-1 hover:bg-yellow-300 p-2 rounded-md"
             >
-              <Folder size={32} className="inline-block" />
+              <FolderOpen size={32} className="inline-block" />
               <span
                 className={`${
                   !open && "hidden"
                 } origin-left duration-200 font-bold text-neutral-800`}
               >
-                Documentos
+                Inserir Atividade
               </span>
             </Link>
           </li>
@@ -84,13 +85,13 @@ function Sidebar() {
               href=""
               className="transition-colors flex items-center mt-1 hover:bg-yellow-300 p-2 rounded-md"
             >
-              <ChartBar size={32} className="inline-block" />
+              <Folder size={32} className="inline-block" />
               <span
                 className={`${
                   !open && "hidden"
                 } origin-left duration-200 font-bold text-neutral-800`}
               >
-                Progresso
+                Meus Documentos
               </span>
             </Link>
           </li>
@@ -114,6 +115,7 @@ function Sidebar() {
       <div className="absolute bottom-10 left-6">
         <Link to="/" className="">
           <button
+            onClick={() => cookie.remove("session")}
             className={`${
               !open && "scale-0"
             } flex gap-2 items-center px-6 py-3 rounded-md font-bold text-zinc-900 hover:bg-yellow-300 hover:text-neutral-900 transition-colors origin-left `}

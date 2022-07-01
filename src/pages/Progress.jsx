@@ -1,72 +1,55 @@
 import React from "react";
+import { useState } from "react";
 import Sidebar from "../components/Sidebar";
+import Card from "../components/Card";
+import useSWR from "swr";
+import Cookies from "universal-cookie";
+
+const fetcher = async (url, token) =>
+  await fetch(url, {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  })
+    .then(async (res) => {
+      if (res.status !== 200) {
+        console.log(res.status);
+      }
+      const data = await res.json();
+      return data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
 function Progress() {
+  const [isShow, setIsShow] = useState(false);
+
+  const cookie = new Cookies();
+  const session = cookie.get("session");
+
+  const { data, error } = useSWR(
+    session.token && ["http://localhost:3333/documents", session.token],
+    fetcher
+  );
+
   return (
     <div className="flex overflow-hidden">
       <Sidebar />
+      <div className="flex flex-col">
+        <h1 className="text-3xl p-12 pt-4 pb-5">Progresso</h1>
 
-      <div className="flex flex-col w-1/2">
-        <div>
-          <h1 className="text-3xl p-12 pt-4 pb-5">Progresso</h1>
-
-          <div className="flex ">
-            <div className="ml-12 mt-4">
-              <div className="border-2 border-yellow-400 w-48 p-3">
-                <h3 className="font-bold">Palestra Física Buracos Negros</h3>
-
-                <p className="text-left ">Grupo 1</p>
-
-                <p className="text-sm">
-                  Palestra sobre física dos buracos negros realizado em 2019
-                </p>
-
-                <button className="bg-yellow-600 p-3">Editar</button>
-              </div>
-            </div>
-
-            <div className="ml-12 mt-4">
-              <div className="border-2 border-yellow-400 w-48 p-3">
-                <h3 className="font-bold">Palestra Física Buracos Negros</h3>
-
-                <p className="text-left ">Grupo 1</p>
-
-                <p className="text-sm">
-                  Palestra sobre física dos buracos negros realizado em 2019
-                </p>
-
-                <button className="bg-yellow-600 p-3">Editar</button>
-              </div>
-            </div>
-
-            <div className="ml-12 mt-4">
-              <div className="border-2 border-yellow-400 w-48 p-3">
-                <h3 className="font-bold">Palestra Física Buracos Negros</h3>
-
-                <p className="text-left ">Grupo 1</p>
-
-                <p className="text-sm">
-                  Palestra sobre física dos buracos negros realizado em 2019
-                </p>
-
-                <button className="bg-yellow-600 p-3">Editar</button>
-              </div>
-            </div>
-
-            <div className="ml-12 mt-4">
-              <div className="border-2 border-yellow-400 w-48 p-3">
-                <h3 className="font-bold">Palestra Física Buracos Negros</h3>
-
-                <p className="text-left ">Grupo 1</p>
-
-                <p className="text-sm">
-                  Palestra sobre física dos buracos negros realizado em 2019
-                </p>
-
-                <button className="bg-yellow-600 p-3">Editar</button>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-wrap max-w-[70rem]">
+          {data?.map((dados, index) => (
+            <Card
+              title={dados.title}
+              group={dados.group}
+              description={dados.description}
+              key={index}
+              dados={dados.id}
+              session={session.token}
+            ></Card>
+          ))}
         </div>
       </div>
     </div>

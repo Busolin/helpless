@@ -104,6 +104,12 @@ function RegisterScreen() {
               } catch (error) {
                 console.error("deu erro");
               }
+
+              useName("");
+              useEmail("");
+              usePassword("");
+
+              alert("Usuário criado com sucesso!");
             }}
             className="bg-yellow-500 p-4 font-bold focus:border-yellow-500 focus:ring-yellow-700 focus:ring-1 focus:outline-none"
           >
